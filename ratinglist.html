@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--my css-->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Enjoy The Ride</title>
+</head>
+
+<body>
+    <!--top navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand active" href="index.html">Enjoy the Ride</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--end navigation-->
+    <!--breadcrumbs-->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Your Ride Lists</li>
+        </ol>
+    </nav>
+    <!--end breadcrumbs-->
+
+    <main>
+        <header>
+            <h1>Your Lists</h1>
+        </header>
+        <!--Select a list-->
+        <main>
+            <h2>Park</h2>
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chose A Park</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Magic Kingdom</a>
+                    <a class="dropdown-item" href="#">Epcot</a>
+                    <a class="dropdown-item" href="#">Hollywood Studos</a>
+                    <a class="dropdown-item" href="#">Animal Kingdom</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Typhoon Lagoon Water Park</a>
+                    <a class="dropdown-item" href="#">Blizzard Beach Water Park</a>
+                </div>
+            </div>
+            <h2>Person</h2>
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="choseperson1"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chose A Person</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Mom</a>
+                    <a class="dropdown-item" href="#">Dad</a>
+                    <a class="dropdown-item" href="#">Ella</a>
+                    <a class="dropdown-item" href="#">Joey</a>
+                </div>
+            </div>
+            <!--end select a list-->
+            
+            <h3>Magic Kingdom Ratings</h3>
+            <!--Start Table-->
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>Attraction</th>
+                        <th>Rating</th>
+                        <th>Person</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Big Thunder Mountain Railroad</td>
+                        <td>5</td>
+                        <td>Mom</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                    <tr>
+                        <td>Space Mountain</td>
+                        <td>4</td>
+                        <td>Mom</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                    <tr>
+                        <td>Mad Tea Party</td>
+                        <td>5</td>
+                        <td>Dad</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                    <tr>
+                        <td>&quot;it&apos;s a small world&quot;</td>
+                        <td>2</td>
+                        <td>Dad</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                    <tr>
+                        <td>The Barnstormer</td>
+                        <td>5</td>
+                        <td>Ella</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                    <tr>
+                        <td>Haunted Mansion</td>
+                        <td>3</td>
+                        <td>Ella</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                    <tr>
+                        <td>Haunted Mansion</td>
+                        <td>5</td>
+                        <td>Joey</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                    <tr>
+                        <td>Enchanted Tales with Belle</td>
+                        <td>1</td>
+                        <td>Joey</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!--End Table-->
+            <!--Start Form-->
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="ride" placeholder="Ride Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="range" class="form-control-range" min="1" max="5" id="range">
+                    </div>
+                    <div class="dropdown col-md-2">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="choseperson2"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chose A Person</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Mom</a>
+                            <a class="dropdown-item" href="#">Dad</a>
+                            <a class="dropdown-item" href="#">Ella</a>
+                            <a class="dropdown-item" href="#">Joey</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-outline-secondary">Export</button>
+                        <button type="button" class="btn btn-outline-secondary">Print</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+
+        <hr>
+        <!--footer-->
+        <footer class="text-right">
+            <p>&copy;Michelle Harrop 2019. Content provided by <a href="https://disneyworld.disney.go.com/"
+                    target="_blank">Walt Disney World</a></p>
+        </footer>
+
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

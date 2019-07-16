@@ -1,0 +1,20 @@
+header {
+    text-align: center;
+}
+footer {
+    text-align: right;
+}
+
+.carousel {
+    height: 400px;
+}
+
+.carousel img {
+    margin: auto;
+}
+
+#range {
+    padding: 0px 6px;
+}
+
+
