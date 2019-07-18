@@ -10,8 +10,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!--my css-->
+    <!--my css and font-->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/login_styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="img/favicon.ico">
 
     <title>Enjoy The Ride</title>
 </head>
@@ -30,9 +34,6 @@
                     <a class="nav-link" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Log In</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="register.html">Sign Up</a>
                 </li>
             </ul>
@@ -49,12 +50,12 @@
     <!--end breadcrumbs-->
 
     <main>
+        <header>
+            <h1>Log In</h1>
+        </header>
         <!--Carousel of main gate entrances-->
         <div class="jumbotron jumbotron-fluid">
             <div class="container col-md-6 offset-md-3">
-                <header>
-                    <h1>Log In</h1>
-                </header>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -64,16 +65,16 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="img/mk-entrance-better.jpg" class="d-block w-100" alt="Magic Kingdom Entrance">
+                            <img src="img/mk-entrance.jpg" class="d-block w-100" alt="Magic Kingdom Entrance">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/epcot-entrance-better.jpg" class="d-block w-100" alt="New Epcot Entrance">
+                            <img src="img/epcot-entrance.jpg" class="d-block w-100" alt="New Epcot Entrance">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/hs-entrance-better.jpg" class="d-block w-100" alt="Hollywood Studios Enterance">
+                            <img src="img/hs-entrance.jpg" class="d-block w-100" alt="Hollywood Studios Entrance">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/ak-entrance-better.jpg" class="d-block w-100" alt="Animal Kingdom Entrance">
+                            <img src="img/ak-entrance.jpg" class="d-block w-100" alt="Animal Kingdom Entrance">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -89,30 +90,33 @@
         </div>
         <!--End carousel-->
         <br />
+
         <!--login form-->
-        <form class="row">
+        <!--<form class="row" name="login" action="ratinglist.html" method="Post">-->
+        <form class="row" name="login" action="ratinglist.html" method="GET">
             <div class="form-group col-md-6 offset-md-3">
-                <label for="email1">Email address</label>
-                <input type="email" class="form-control" id="email1" aria-describedby="emailHelp"
-                        placeholder="Enter email">
+                <label for="username1">Username</label>
+                <input type="text" class="form-control" id="username1" placeholder="Enter Username" required autofocus>
             </div>
             <div class="form-group col-md-6 offset-md-3">
                 <label for="password1">Password</label>
-                <input type="password" class="form-control" id="password1" placeholder="Password">
+                <input type="password" class="form-control" id="password1" placeholder="Password" minlength="8" maxlength="20"required>
             </div>
             <br />
-            <div class="form-group form-check col-md-4 offset-md-4">
-                <input type="checkbox" class="form-check-input" id="RememberMe1">
-                <label class="form-check-label" for="RememberMe1">Remember Me</label>
+            <div class="form-group form-check col-md-4 offset-md-4 rememberMe1">
+                <input type="checkbox" class="form-check-input" id="rememberMe1">
+                <label class="form-check-label" for="rememberMe1">Remember Me</label>
             </div>
-            <p><a role="button" class="btn btn-outline-secondary btn-sm" href="ratinglist.html">Log In</a></p>
+            <button type="submit" class="btn btn-secondary btn-sm login">Log In</button>
+            <button type="reset" class="btn btn-secondary btn-sm reset">Reset</button>
         </form>
 
         <hr>
         <!--footer-->
         <footer class="text-right">
             <p>&copy;Michelle Harrop 2019. Content provided by <a href="https://disneyworld.disney.go.com/"
-                    target="_blank">Walt Disney World</a></p>
+                target="_blank">Walt Disney World</a> and <a href="https://en.wikipedia.org/wiki/Walt_Disney_World"
+                target="_blank">Wikipedia</a></p>
         </footer>
 
     </main>

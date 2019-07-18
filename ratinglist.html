@@ -9,10 +9,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!--my css-->
+    <!--my css and font-->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ratinglist_styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800&display=swap" rel="stylesheet">
 
+    <link rel="icon" href="img/favicon.ico">
     <title>Enjoy The Ride</title>
+    
 </head>
 
 <body>
@@ -39,7 +43,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Your Ride Lists</li>
+            <li class="breadcrumb-item active" aria-current="page">Your Lists</li>
         </ol>
     </nav>
     <!--end breadcrumbs-->
@@ -49,9 +53,8 @@
             <h1>Your Lists</h1>
         </header>
         <!--Select a list-->
-        <main>
             <h2>Park</h2>
-            <div class="dropdown">
+            <div class="dropdown dpdwn">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chose A Park</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -59,13 +62,10 @@
                     <a class="dropdown-item" href="#">Epcot</a>
                     <a class="dropdown-item" href="#">Hollywood Studos</a>
                     <a class="dropdown-item" href="#">Animal Kingdom</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Typhoon Lagoon Water Park</a>
-                    <a class="dropdown-item" href="#">Blizzard Beach Water Park</a>
                 </div>
             </div>
             <h2>Person</h2>
-            <div class="dropdown">
+            <div class="dropdown dpdwn">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="choseperson1"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chose A Person</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -76,89 +76,819 @@
                 </div>
             </div>
             <!--end select a list-->
-            
+            <!--start add a list-->
+            <!--<form class="addList" name="addlist" action="#" method="Post">-->
+            <form name="addList" action="#" method="GET" class="addList">
+                <div class="form-row">
+                    <div class="form-group col-6 col-md-4">
+                        <input type="text" class="form-control" id="list" placeholder="List Name" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success">Add</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                    </div>
+                </div>
+            </form>
+            <div class="form-check public">
+                <input class="form-check-input" type="checkbox" value="" id="makePublic">
+                <label class="form-check-label" for="makePublic">
+                    Click here to make your list public
+                </label>
+            </div>
+            <!--end add a list-->
+
             <h3>Magic Kingdom Ratings</h3>
             <!--Start Table-->
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>
                         <th>Attraction</th>
-                        <th>Rating</th>
-                        <th>Person</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th class="center">Rating</th>
+                        <th class="center">Person</th>
+                        <th class="center">Edit</th>
+                        <th class="center">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Big Thunder Mountain Railroad</td>
-                        <td>5</td>
-                        <td>Mom</td>
-                        <td>Edit</td>
-                        <td>Delete</td>
+                        <td class="center">5</td>
+                        <td class="center">Mom</td>
+                        <td class="center">
+                            <!-- Edit modal button -->
+                            <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                                data-target="#editBTMR">
+                                Edit
+                            </button>
+
+                            <!-- Edit modal actual -->
+                            <div class="modal fade" id="editBTMR" tabindex="-1" role="dialog" aria-labelledby="editBTMR"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="editBTMRh4">Edit Rating</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--start form edit-->
+                                            <!--<form name="modal1" action="#" method="Post">-->
+                                            <form name="modal1" action="#" method="GET">
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <input type="text" readonly class="form-control-plaintext"
+                                                            id="ride1" placeholder="Big Thunder Mountain Railroad">
+                                                        <label for="ride1" class="sr-only">Ride Name</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="range" class="form-control-range" min="1" max="5"
+                                                            id="range1">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="dropdown col-md-2">
+                                                        <a class="btn btn-secondary dropdown-toggle" href="#"
+                                                            role="button" id="chosepersonm1" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">Chose A
+                                                            Person</a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <a class="dropdown-item" href="#">Mom</a>
+                                                            <a class="dropdown-item" href="#">Dad</a>
+                                                            <a class="dropdown-item" href="#">Ella</a>
+                                                            <a class="dropdown-item" href="#">Joey</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <!--end form edit-->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal-->
+                        </td>
+                        <td class="center">
+                            <!-- Delete modal button -->
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                data-target="#deleteBTMR">
+                                Delete
+                            </button>
+
+                            <!-- actual delete modal -->
+                            <div class="modal fade" id="deleteBTMR" tabindex="-1" role="dialog"
+                                aria-labelledby="deleteBTMR" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="deleteBTMRh4">Delete</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete Big Thunder Mountain Railroad?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-secondary">No, cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal-->
+                        </td>
                     </tr>
                     <tr>
                         <td>Space Mountain</td>
-                        <td>4</td>
-                        <td>Mom</td>
-                        <td>Edit</td>
-                        <td>Delete</td>
+                        <td class="center">4</td>
+                        <td class="center">Mom</td>
+                        <td class="center">
+                            <!-- Edit modal button-->
+                            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#editSM">
+                                Edit
+                            </button>
+
+                            <!-- actual edit modal -->
+                            <div class="modal fade" id="editSM" tabindex="-1" role="dialog" aria-labelledby="editSM"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="editSMh4">Edit Rating</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--start form edit-->
+                                            <!--<form name="modal2" action="#" method="Post">-->
+                                            <form name="modal2" action="#" method="GET">
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <input type="text" readonly class="form-control-plaintext"
+                                                            id="ride2" placeholder="Space Mountain">
+                                                        <label for="ride2" class="sr-only">Ride Name</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="range" class="form-control-range" min="1" max="5"
+                                                            id="range2">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="dropdown col-md-2">
+                                                        <a class="btn btn-secondary dropdown-toggle" href="#"
+                                                            role="button" id="chosepersonm2" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">Chose A
+                                                            Person</a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <a class="dropdown-item" href="#">Mom</a>
+                                                            <a class="dropdown-item" href="#">Dad</a>
+                                                            <a class="dropdown-item" href="#">Ella</a>
+                                                            <a class="dropdown-item" href="#">Joey</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <!--end form edit-->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal -->
+                        </td>
+                        <td class="center">
+                            <!-- Delete modal button -->
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                data-target="#deleteSM">
+                                Delete
+                            </button>
+
+                            <!-- actual delete modal -->
+                            <div class="modal fade" id="deleteSM" tabindex="-1" role="dialog" aria-labelledby="deleteSM"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="deleteSMh4">Delete</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete Space Mountain?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-secondary">No, cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal-->
+                        </td>
                     </tr>
                     <tr>
                         <td>Mad Tea Party</td>
-                        <td>5</td>
-                        <td>Dad</td>
-                        <td>Edit</td>
-                        <td>Delete</td>
+                        <td class="center">5</td>
+                        <td class="center">Dad</td>
+                        <td class="center">
+                            <!-- Edit modal button-->
+                            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#editMTP">
+                                Edit
+                            </button>
+
+                            <!-- actual edit modal -->
+                            <div class="modal fade" id="editMTP" tabindex="-1" role="dialog" aria-labelledby="editMTP"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="editMTPh4">Edit Rating</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--start form edit-->
+                                            <!--<form name="modal3" action="#" method="Post">-->
+                                            <form name="modal3" action="#" method="GET">
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <input type="text" readonly class="form-control-plaintext"
+                                                            id="ride3" placeholder="Mad Tea Party">
+                                                        <label for="ride3" class="sr-only">Ride Name</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="range" class="form-control-range" min="1" max="5"
+                                                            id="range3">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="dropdown col-md-2">
+                                                        <a class="btn btn-secondary dropdown-toggle" href="#"
+                                                            role="button" id="chosepersonm3" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">Chose A
+                                                            Person</a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <a class="dropdown-item" href="#">Mom</a>
+                                                            <a class="dropdown-item" href="#">Dad</a>
+                                                            <a class="dropdown-item" href="#">Ella</a>
+                                                            <a class="dropdown-item" href="#">Joey</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <!--end form edit-->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal -->
+                        </td>
+                        <td class="center">
+                            <!-- Delete modal button -->
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                data-target="#deleteMTP">
+                                Delete
+                            </button>
+
+                            <!-- actual delete modal -->
+                            <div class="modal fade" id="deleteMTP" tabindex="-1" role="dialog" aria-labelledby="deleteMTP"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="deleteMTPh4">Delete</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete Mad Tea Party?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-secondary">No, cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal-->
+                        </td>
                     </tr>
                     <tr>
                         <td>&quot;it&apos;s a small world&quot;</td>
-                        <td>2</td>
-                        <td>Dad</td>
-                        <td>Edit</td>
-                        <td>Delete</td>
+                        <td class="center">2</td>
+                        <td class="center">Dad</td>
+                        <td class="center">
+                            <!-- Edit modal button-->
+                            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#editSW">
+                                Edit
+                            </button>
+
+                            <!-- actual edit modal -->
+                            <div class="modal fade" id="editSW" tabindex="-1" role="dialog" aria-labelledby="editSW"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="editSWh4">Edit Rating</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--start form edit-->
+                                            <!--<form name="modal4" action="#" method="Post">-->
+                                            <form name="modal4" action="#" method="GET">
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <input type="text" readonly class="form-control-plaintext"
+                                                            id="ride4" placeholder="&quot;it&apos;s a small world&quot;">
+                                                        <label for="ride4" class="sr-only">Ride Name</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="range" class="form-control-range" min="1" max="5"
+                                                            id="range4">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="dropdown col-md-2">
+                                                        <a class="btn btn-secondary dropdown-toggle" href="#"
+                                                            role="button" id="chosepersonm4" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">Chose A
+                                                            Person</a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <a class="dropdown-item" href="#">Mom</a>
+                                                            <a class="dropdown-item" href="#">Dad</a>
+                                                            <a class="dropdown-item" href="#">Ella</a>
+                                                            <a class="dropdown-item" href="#">Joey</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <!--end form edit-->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal -->
+                        </td>
+                        <td class="center">
+                            <!-- Delete modal button -->
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                data-target="#deleteSW">
+                                Delete
+                            </button>
+
+                            <!-- actual delete modal -->
+                            <div class="modal fade" id="deleteSW" tabindex="-1" role="dialog" aria-labelledby="deleteSW"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="deleteSWh4">Delete</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete &quot;it&apos;s a small world&quot;?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-secondary">No, cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal-->
+                        </td>
                     </tr>
                     <tr>
                         <td>The Barnstormer</td>
-                        <td>5</td>
-                        <td>Ella</td>
-                        <td>Edit</td>
-                        <td>Delete</td>
+                        <td class="center">5</td>
+                        <td class="center">Ella</td>
+                        <td class="center">
+                            <!-- Edit modal button-->
+                            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#editBarn">
+                                Edit
+                            </button>
+
+                            <!-- actual edit modal -->
+                            <div class="modal fade" id="editBarn" tabindex="-1" role="dialog" aria-labelledby="editBarn"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="editBarnh4">Edit Rating</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--start form edit-->
+                                            <!--<form name="modal5" action="#" method="Post">-->
+                                            <form name="modal5" action="#" method="GET">
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <input type="text" readonly class="form-control-plaintext"
+                                                            id="ride5" placeholder="The Barnstormer">
+                                                        <label for="ride5" class="sr-only">Ride Name</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="range" class="form-control-range" min="1" max="5"
+                                                            id="range5">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="dropdown col-md-2">
+                                                        <a class="btn btn-secondary dropdown-toggle" href="#"
+                                                            role="button" id="chosepersonm5" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">Chose A
+                                                            Person</a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <a class="dropdown-item" href="#">Mom</a>
+                                                            <a class="dropdown-item" href="#">Dad</a>
+                                                            <a class="dropdown-item" href="#">Ella</a>
+                                                            <a class="dropdown-item" href="#">Joey</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <!--end form edit-->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal -->
+                        </td>
+                        <td class="center">
+                            <!-- Delete modal button -->
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                data-target="#deleteBarn">
+                                Delete
+                            </button>
+
+                            <!-- actual delete modal -->
+                            <div class="modal fade" id="deleteBarn" tabindex="-1" role="dialog" aria-labelledby="deleteBarn"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="deleteBarnh4">Delete</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete The Barnstormer?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-secondary">No, cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal-->
+                        </td>
                     </tr>
                     <tr>
                         <td>Haunted Mansion</td>
-                        <td>3</td>
-                        <td>Ella</td>
-                        <td>Edit</td>
-                        <td>Delete</td>
+                        <td class="center">3</td>
+                        <td class="center">Ella</td>
+                        <td class="center">
+                            <!-- Edit modal button-->
+                            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#editHaunted1">
+                                Edit
+                            </button>
+
+                            <!-- actual edit modal -->
+                            <div class="modal fade" id="editHaunted1" tabindex="-1" role="dialog" aria-labelledby="editHaunted1"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="editHaunted1h4">Edit Rating</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--start form edit-->
+                                            <!--<form name="modal6" action="#" method="Post">-->
+                                            <form name="modal6" action="#" method="GET">
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <input type="text" readonly class="form-control-plaintext"
+                                                            id="ride6" placeholder="Haunted Mansion">
+                                                        <label for="ride6" class="sr-only">Ride Name</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="range" class="form-control-range" min="1" max="5"
+                                                            id="range6">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="dropdown col-md-2">
+                                                        <a class="btn btn-secondary dropdown-toggle" href="#"
+                                                            role="button" id="chosepersonm6" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">Chose A
+                                                            Person</a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <a class="dropdown-item" href="#">Mom</a>
+                                                            <a class="dropdown-item" href="#">Dad</a>
+                                                            <a class="dropdown-item" href="#">Ella</a>
+                                                            <a class="dropdown-item" href="#">Joey</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <!--end form edit-->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal -->
+                        </td>
+                        <td class="center">
+                            <!-- Delete modal button -->
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                data-target="#deleteHaunted1">
+                                Delete
+                            </button>
+
+                            <!-- actual delete modal -->
+                            <div class="modal fade" id="deleteHaunted1" tabindex="-1" role="dialog" aria-labelledby="deleteHaunted1"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="deleteHaunted1h4">Delete</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete Haunted Mansion?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-secondary">No, cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal-->
+                        </td>
                     </tr>
                     <tr>
                         <td>Haunted Mansion</td>
-                        <td>5</td>
-                        <td>Joey</td>
-                        <td>Edit</td>
-                        <td>Delete</td>
+                        <td class="center">5</td>
+                        <td class="center">Joey</td>
+                        <td class="center">
+                            <!-- Edit modal button-->
+                            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#editHaunted2">
+                                Edit
+                            </button>
+
+                            <!-- actual edit modal -->
+                            <div class="modal fade" id="editHaunted2" tabindex="-1" role="dialog" aria-labelledby="editHaunted2"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="editHaunted2h4">Edit Rating</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--start form edit-->
+                                            <!--<form name="modal7" action="#" method="Post">-->
+                                            <form name="modal7" action="#" method="GET">
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <input type="text" readonly class="form-control-plaintext"
+                                                            id="ride7" placeholder="Haunted Mansion">
+                                                        <label for="ride7" class="sr-only">Ride Name</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="range" class="form-control-range" min="1" max="5"
+                                                            id="range7">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="dropdown col-md-2">
+                                                        <a class="btn btn-secondary dropdown-toggle" href="#"
+                                                            role="button" id="chosepersonm7" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">Chose A
+                                                            Person</a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <a class="dropdown-item" href="#">Mom</a>
+                                                            <a class="dropdown-item" href="#">Dad</a>
+                                                            <a class="dropdown-item" href="#">Ella</a>
+                                                            <a class="dropdown-item" href="#">Joey</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <!--end form edit-->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal -->
+                        </td>
+                        <td class="center">
+                            <!-- Delete modal button -->
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                data-target="#deleteHaunted2">
+                                Delete
+                            </button>
+
+                            <!-- actual delete modal -->
+                            <div class="modal fade" id="deleteHaunted2" tabindex="-1" role="dialog" aria-labelledby="deleteHaunted2"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="deleteHaunted2h4">Delete</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete Haunted Mansion?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-secondary">No, cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal-->
+                        </td>
                     </tr>
                     <tr>
                         <td>Enchanted Tales with Belle</td>
-                        <td>1</td>
-                        <td>Joey</td>
-                        <td>Edit</td>
-                        <td>Delete</td>
+                        <td class="center">1</td>
+                        <td class="center">Joey</td>
+                        <td class="center">
+                            <!-- Edit modal button-->
+                            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#editBelle">
+                                Edit
+                            </button>
+
+                            <!-- actual edit modal -->
+                            <div class="modal fade" id="editBelle" tabindex="-1" role="dialog" aria-labelledby="editBelle"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="editBelleh4">Edit Rating</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--start form edit-->
+                                            <!--<form name="modal8" action="#" method="Post">-->
+                                            <form name="modal8" action="#" method="GET">
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <input type="text" readonly class="form-control-plaintext"
+                                                            id="ride8" placeholder="Enchanted Tales with Belle">
+                                                        <label for="ride8" class="sr-only">Ride Name</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="range" class="form-control-range" min="1" max="5"
+                                                            id="range8">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="dropdown col-md-2">
+                                                        <a class="btn btn-secondary dropdown-toggle" href="#"
+                                                            role="button" id="chosepersonm8" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">Chose A
+                                                            Person</a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <a class="dropdown-item" href="#">Mom</a>
+                                                            <a class="dropdown-item" href="#">Dad</a>
+                                                            <a class="dropdown-item" href="#">Ella</a>
+                                                            <a class="dropdown-item" href="#">Joey</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <!--end form edit-->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal -->
+                        </td>
+                        <td class="center">
+                            <!-- Delete modal button -->
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                data-target="#deleteBelle">
+                                Delete
+                            </button>
+
+                            <!-- actual delete modal -->
+                            <div class="modal fade" id="deleteBelle" tabindex="-1" role="dialog" aria-labelledby="deleteBelle"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="deleteBelleh4">Delete</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete Enchanted Tales with Belle?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-dismiss="modal">Yes</button>
+                                            <button type="button" class="btn btn-secondary">No, cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal-->
+                        </td>
                     </tr>
                 </tbody>
             </table>
             <!--End Table-->
-            <!--Start Form-->
-            <form>
+            <hr>
+            <!--Start add ride Form-->
+            <!--<form name="addRide" action="#" method="Post">-->
+            <form name="addRide" action="#" method="GET">
                 <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="ride" placeholder="Ride Name">
+                    <div class="form-group col-6 col-md-4">
+                        <input type="text" class="form-control" id="ride" placeholder="Ride Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="range" class="form-control-range" min="1" max="5" id="range">
+                        <input type="range" class="form-control-range" min="1" max="5" step="1" id="range">
                     </div>
-                    <div class="dropdown col-md-2">
+                    <div class="form-group col-6 col-md-2">
+                        <input type="text" class="form-control" id="person" placeholder="Add a Person">
+                    </div>
+                    <div class="dropdown col-6 col-md-2">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="choseperson2"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chose A Person</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -168,19 +898,19 @@
                             <a class="dropdown-item" href="#">Joey</a>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-outline-secondary">Export</button>
-                        <button type="button" class="btn btn-outline-secondary">Print</button>
+                    <div class="form-group arp-group">
+                        <button type="button" class="btn btn-success">Add</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                        <button type="button" class="btn btn-primary">Print</button>
                     </div>
                 </div>
             </form>
-        </main>
-
+            <!--End add ride Form-->
         <hr>
         <!--footer-->
         <footer class="text-right">
             <p>&copy;Michelle Harrop 2019. Content provided by <a href="https://disneyworld.disney.go.com/"
-                    target="_blank">Walt Disney World</a></p>
+                    target="_blank">Walt Disney World</a> and <a href="https://en.wikipedia.org/wiki/Walt_Disney_World" target="_blank">Wikipedia</a></p>
         </footer>
 
     </main>

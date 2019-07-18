@@ -9,8 +9,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!--my css-->
+    <!--my css and font-->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index_styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="img/favicon.ico">
 
     <title>Enjoy The Ride</title>
 </head>
@@ -40,12 +44,12 @@
     <!--end top navigation-->
 
     <main>
+        <header>
+            <h1>Enjoy The Ride</h1>
+        </header>
         <!--Carousel of main park icons-->
         <div class="jumbotron jumbotron-fluid">
             <div class="container col-md-6 offset-md-3">
-                <header>
-                    <h1>Enjoy The Ride</h1>
-                </header>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -83,16 +87,25 @@
             </div>
         </div>
         <!--end carousel of main park icons-->
+        <!--Static small image for cellphones-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 text-center">
+                    <img src="img/cinderella-castle-vsm.jpg" alt="Cinderella Castle" class="castle-sm">
+                </div>
+            </div>
+        </div>
+        <!--end static small image for cellphones-->
         <hr>
 
         <!--media objects with article links-->
         <article>
             <div class="media">
-                <img src="img/everest-sm.jpg" class="align-self-start mr-3" alt="Expedition Everest">
+                <img src="img/everest-sm.jpg" class="align-self-start mr-3 media-img" alt="Expedition Everest">
                 <div class="media-body">
                     <h2 class="mt-0">See Your Ratings</h2>
                     <p>Click here to sign in, see your ratings, or add more.</p>
-                    <p class="mb-0"><a role="button" class="btn btn-outline-secondary btn-sm" href="login.html">Log In
+                    <p class="mb-0"><a role="button" class="btn btn-secondary btn-sm" href="login.html">Log In
                             Now</a></p>
                 </div>
             </div>
@@ -100,26 +113,13 @@
         <hr>
         <article>
             <div class="media">
-                <img src="img/jungle-cruise-sm.jpg" class="align-self-start mr-3" alt="Expedition Everest">
+                <img src="img/jungle-cruise-sm.jpg" class="align-self-start mr-3 media-img" alt="Jungle Cruise">
                 <div class="media-body">
                     <h2 class="mt-0">See Public Lists</h2>
-                    <p>Want to know if other people love Jungle Cruise as much as you? Have a burning dislike for the
+                    <p>Want to know if other guests love Jungle Cruise as much as you? Have a burning dislike for the
                         Enchanted Tiki Room?</p>
-                    <p class="mb-0"><a role="button" class="btn btn-outline-secondary btn-sm" href="#">Find Out Here</a>
+                    <p class="mb-0"><a role="button" class="btn btn-secondary btn-sm" href="publiclists.html">Find Out Here</a>
                     </p>
-                </div>
-            </div>
-        </article>
-        <hr>
-        <article>
-            <div class="media">
-                <img src="img/big-thunder-mountain-sm.jpg" class="align-self-start mr-3" alt="Expedition Everest">
-                <div class="media-body">
-                    <h2 class="mt-0">See All User's Top Rated Rides</h2>
-                    <p>Coming soon! See all of our user's top rated rides. Keep rating to see your favorite move to the
-                        top!</p>
-                    <p class="mb-0"><a role="button" class="btn btn-outline-secondary btn-sm disabled" href="#"
-                            tabindex="-1" aria-disabled="true">Coming Soon</a></p>
                 </div>
             </div>
         </article>
@@ -129,7 +129,8 @@
         <!--footer-->
         <footer>
             <p>&copy;Michelle Harrop 2019. Content provided by <a href="https://disneyworld.disney.go.com/"
-                    target="_blank">Walt Disney World</a></p>
+                target="_blank">Walt Disney World</a> and <a href="https://en.wikipedia.org/wiki/Walt_Disney_World"
+                target="_blank">Wikipedia</a></p>
         </footer>
 
     </main>

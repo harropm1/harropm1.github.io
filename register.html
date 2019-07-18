@@ -10,9 +10,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!--my css-->
+    <!--my css and font-->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/register_styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800&display=swap" rel="stylesheet">
 
+    <link rel="icon" href="img/favicon.ico">
     <title>Enjoy The Ride</title>
 </head>
 
@@ -32,9 +35,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="login.html">Log In</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sign up</a>
-                </li>
             </ul>
         </div>
     </nav>
@@ -49,12 +49,12 @@
     <!--end breadcrumbs-->
 
     <main>
+        <header>
+            <h1>Sign Up</h1>
+        </header>
         <!--Carousel of popular rides-->
         <div class="jumbotron jumbotron-fluid">
             <div class="container col-md-6 offset-md-3">
-                <header>
-                    <h1>Sign Up</h1>
-                </header>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -64,16 +64,16 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="img/small-world-sm.jpg" class="d-block w-100" alt="it's a small world">
+                            <img src="img/small-world.jpg" class="d-block w-100" alt="it's a small world ride">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/spaceship-earth-sm.jpg" class="d-block w-100" alt="Spaceship Earth">
+                            <img src="img/spaceship-earth.jpg" class="d-block w-100" alt="Spaceship Earth ride">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/toy-story-sm.jpg" class="d-block w-100" alt="Hollywood Studios Enterance">
+                            <img src="img/toy-story.jpg" class="d-block w-100" alt="Toy Story Land sign">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/everest2-sm.jpg" class="d-block w-100" alt="Animal Kingdom Entrance">
+                            <img src="img/everest2.jpg" class="d-block w-100" alt="Expedition Everest ride">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -90,43 +90,51 @@
         <!--End carousel-->
         <br />
         <!--login form-->
-        <form name="register" action="#" method="GET">
+        <!--<form name="register" action="login.html" method="POST">-->
+        <form name="register" action="login.html" method="GET">
             <div class="form-row justify-content-center">
                 <div class="form-group col-md-4">
-                    <label for="name1">Name</label>
-                    <input type="text" class="form-control" id="Name" placeholder="Name">
+                    <label for="userName1">Username</label>
+                    <input type="text" class="form-control" id="userName1" placeholder="Username" aria-describedby="usernameHelp1" minlength="8" maxlength="20" autofocus required>
+                    <small id="usernameHelp1" class="form-text text-muted">
+                            Your username must be 8-20 characters long and can only contain letters and numbers.
+                            </small>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="email2">Email</label>
-                    <input type="email" class="form-control" id="email2" placeholder="Email">
+                    <input type="email" class="form-control" id="email2" placeholder="Email" required>
                 </div>
             </div>
             <div class="form-row justify-content-center">
-                    <div class="form-group col-md-4">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="confirm">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirm" placeholder="Confirm Password">
-                    </div>
+                <div class="form-group col-md-4">
+                    <label for="password">Create a Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Create a Password" aria-describedby="passwordHelp1" minlength="8" maxlength="20" required>
+                    <small id="passwordHelp1" class="form-text text-muted">
+                        Your password must be 8-20 characters long and only contain letters and numbers.
+                        </small>
                 </div>
+                <div class="form-group col-md-4">
+                    <label for="confirm">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirm" placeholder="Confirm Password" minlength="8" maxlength="20" required>
+                </div>
+            </div>
             <div class="form-row justify-content-center">
                 <div class="form-group col-md-4">
                     <label for="address">Address</label>
                     <input type="text" class="form-control" id="address" placeholder="1234 Main St">
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col4 col-md-4">
                     <label for="address2">Address 2</label>
                     <input type="text" class="form-control" id="address2" placeholder="Apartment, studio, or floor">
                 </div>
             </div>
             <div class="form-row justify-content-center">
-                <div class="form-group col-md-4">
+                <div class="form-group col-6 col-sm-4">
                     <label for="city">City</label>
                     <input type="text" class="form-control" id="city">
                 </div>
-                <div class="form-group col-md-2">
+                <!--state choice list, you can make this small-->
+                <div class="form-group col-3 col-sm-2">
                     <label for="state">State</label>
                     <select id="state" class="form-control">
                         <option selected>Choose...</option>
@@ -183,7 +191,8 @@
                         <option value="WY">Wyoming</option>
                     </select>
                 </div>
-                <div class="form-group col-md-2">
+                <!--state choice list end-->
+                <div class="form-group col-3 col-sm-2">
                     <label for="zip">Zip</label>
                     <input type="text" class="form-control" id="zip" placeholder="12345">
                 </div>
@@ -194,38 +203,38 @@
                     <input type="text" class="form-control" id="reference" placeholder="024680">
                 </div>
             </div>
-            <div class="form-row">
-                <p class="col-md-4 offset-md-2">How did you hear about us?</p>
+            <div class="form-row d-inline-flex hearabout">
+                <p class="mr-md-auto phear">How did you hear about us?</p>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radios" id="radio1" value="Google Search"
+                        checked>
+                    <label class="form-check-label" for="radio1">Google Search</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radios" id="radio2" value="Referral">
+                    <label class="form-check-label" for="radio2">Refered by a friend</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radios" id="radio3" value="other">
+                    <label class="form-check-label pr-2" for="radio3">Other</label>
+                    <input type="text" class="form-control" id="tellus" placeholder="Tell Us How">
+                </div>
             </div>
-            <div class="form-row justify-content-center">   
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="checkbox1" value="Google Search">
-                    <label class="form-check-label" for="checkbox1">Google Search</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="checkbox2" value="Referral">
-                    <label class="form-check-label" for="checkbox2">Refered by a friend</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="checkbox3" value="other">
-                    <label class="form-check-label pr-2" for="checkbox3">Other</label>
-                    <input type="text" class="form-control" id="checkbox3" placeholder="Tell Us How">
-                </div>
-            </div>
+    
             <br />
             <div class="form-group text-center">
-                <a href="login.html" class="btn btn-outline-secondary btn-sm" role="button" aria-pressed="true">Sign Up</a>
-                <input class="btn btn-outline-secondary btn-sm" type="reset" value="Reset">
-                <a href="index.html" class="btn btn-outline-secondary btn-sm" role="button" aria-pressed="true">Cancel</a>
+                <button type="submit" class="btn btn-secondary btn-sm login">Sign Up</button>
+                <button type="reset" class="btn btn-secondary btn-sm login">Reset</button>
             </div>
         </form>
-
+        <!--end form-->
 
         <hr>
         <!--footer-->
         <footer class="text-right">
             <p>&copy;Michelle Harrop 2019. Content provided by <a href="https://disneyworld.disney.go.com/"
-                    target="_blank">Walt Disney World</a></p>
+                    target="_blank">Walt Disney World</a> and <a href="https://en.wikipedia.org/wiki/Walt_Disney_World"
+                    target="_blank">Wikipedia</a></p>
         </footer>
 
     </main>
