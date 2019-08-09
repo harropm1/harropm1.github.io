@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--My CSS-->
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/nationalparksfinder.css">
+
+    <title>Enjoy the Outdoors</title>
+</head>
+
+<body>
+    <!--nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <a class="navbar-brand" href="index.html">Base Camp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">National Park Finder</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mountains.html">Mountain Finder</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--header-->
+    <header>
+        <h1 class="display-1 text-center">National Park Finder</h1>
+    </header>
+
+    <!--dropdowns/search buttons/table-->
+    <main>
+        <div class="container">
+            <div class="sortByState">
+                <label for="stateSelect">Search By State</label>
+                <select class="form-control col-md-6" id="stateSelect">
+                    <option value="choose a state">Choose a State</option>
+                </select>
+                <button type="submit" class="btn btn-primary" id="stateGoBtn">Let's Go!</button>
+                <button type="submit" class="btn btn-dark" id="viewAllBtn">Show Me All the Parks!</button>
+            </div>
+            <p class="orPara">OR</p>
+            <div class="sortByParkType">
+                <label for="parkTypeSelect">Search By Park Type</label>
+                <select class="form-control col-md-6" id="parkTypeSelect">
+                    <option value="choose">Choose a Park Type</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" id="parkTypeGoBtn">Let's Go!</button>
+            <hr>
+            <table id="nationalParksTable" class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name of Park</th>
+                        <th>City and State</th>
+                        <th>Phone</th>
+                        <th>Fax</th>
+                        <th>Visit</th>
+                        <th>Latitude and Longitude</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!--footer-->
+    <hr>
+    <footer class="text-right">
+        <p>All data provided by Dana. Also, Michelle was sick, so go easy on her.</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!--my javascript-->
+    <script src="scripts/nationalparksfinder.js"></script>
+
+</body>
+
+</html>

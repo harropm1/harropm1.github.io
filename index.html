@@ -9,142 +9,130 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!--my css and font-->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/index_styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800&display=swap" rel="stylesheet">
 
-    <link rel="icon" href="img/favicon.ico">
-
-    <title>Enjoy The Ride</title>
+    <title>Enjoy the Outdoors</title>
 </head>
 
 <body>
-    <!--top navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand active" href="#">Enjoy the Ride</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!--nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <a class="navbar-brand" href="#">Base Camp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="nationalparkfinder.html">National Park Finder</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html">Log In</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="register.html">Sign Up</a>
+                    <a class="nav-link" href="mountains.html">Mountain Finder</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <!--end top navigation-->
+
+    <div class="bd-example">
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1"></li>
+                <li data-target="#carousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/acadiabyzach.jpg" class="d-block w-100" alt="Acadia National Park">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Acadia National Park</h2>
+                        <p>Photo by Zach Sloneker</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/archesbymichelle.jpg" class="d-block w-100" alt="Arches National Park">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Arches National Park</h2>
+                        <p>Photo by Michelle Harrop</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/grandcanyonbymichelle.jpg" class="d-block w-100" alt="Grand Canyon National Park">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Grand Canyon National Park</h2>
+                        <p>Photo by Michelle Harrop</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <header>
+        <h1 class="display-1 text-center">Enjoy the Outdoors</h1>
+    </header>
 
     <main>
-        <header>
-            <h1>Enjoy The Ride</h1>
-        </header>
-        <!--Carousel of main park icons-->
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container col-md-6 offset-md-3">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="img/cinderella-castle.jpg" class="d-block w-100"
-                                alt="Cinderella Castle at Magic Kingdom">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/spaceship-earth.jpg" class="d-block w-100"
-                                alt="Spaceship Earth at Epcot">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/tower-of-terror.jpg" class="d-block w-100"
-                                alt="Tower of Terror at Hollywood Studios">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/tree-of-life.jpg" class="d-block w-100"
-                                alt="Tree of Life at Animal Kingdom">
+        <div class="container">
+            <!--description of site-->
+            <article class="text-center">
+                <h2 class="display-4">Welcome!</h2>
+                <p>Here at Enjoy the Outdoors, we try to make your trip as enjoyable as possible. We love the outdoors,
+                    and hope you do too! Please feel free to explore, that's what we're here for!</p>
+            </article>
+        </div>
+
+        <!--articles/links-->
+        <div class="container">
+            <aside>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Explore National Parks!</h2>
+                                <p class="card-text">Find information about a National Park you'd like to visit here!
+                                </p>
+                                <a href="nationalparkfinder.html" class="card-link">Take a Trip!</a>
+                            </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Explore Mountains!</h2>
+                                <p class="card-text">Find information about different mountains in the United States
+                                    here!</p>
+                                <a href="mountains.html" class="card-link">Let's Go!</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </aside>
         </div>
-        <!--end carousel of main park icons-->
-        <!--Static small image for cellphones-->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8 text-center">
-                    <img src="img/cinderella-castle-vsm.jpg" alt="Cinderella Castle" class="castle-sm">
-                </div>
-            </div>
-        </div>
-        <!--end static small image for cellphones-->
-        <hr>
-
-        <!--media objects with article links-->
-        <article>
-            <div class="media">
-                <img src="img/everest-sm.jpg" class="align-self-start mr-3 media-img" alt="Expedition Everest">
-                <div class="media-body">
-                    <h2 class="mt-0">See Your Ratings</h2>
-                    <p>Click here to sign in, see your ratings, or add more.</p>
-                    <p class="mb-0"><a role="button" class="btn btn-secondary btn-sm" href="login.html">Log In
-                            Now</a></p>
-                </div>
-            </div>
-        </article>
-        <hr>
-        <article>
-            <div class="media">
-                <img src="img/jungle-cruise-sm.jpg" class="align-self-start mr-3 media-img" alt="Jungle Cruise">
-                <div class="media-body">
-                    <h2 class="mt-0">See Public Lists</h2>
-                    <p>Want to know if other guests love Jungle Cruise as much as you? Have a burning dislike for the
-                        Enchanted Tiki Room?</p>
-                    <p class="mb-0"><a role="button" class="btn btn-secondary btn-sm" href="publiclists.html">Find Out Here</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        <!--end media objects with article links-->
-
-        <hr>
-        <!--footer-->
-        <footer>
-            <p>&copy;Michelle Harrop 2019. Content provided by <a href="https://disneyworld.disney.go.com/"
-                target="_blank">Walt Disney World</a> and <a href="https://en.wikipedia.org/wiki/Walt_Disney_World"
-                target="_blank">Wikipedia</a></p>
-        </footer>
-
     </main>
+
+    <!--footer-->
+    <hr>
+    <footer class="text-right">
+        <p>All data provided by Dana. Also, Michelle was sick, so go easy on her.</p>
+    </footer>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
