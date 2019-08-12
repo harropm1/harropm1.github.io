@@ -210,23 +210,49 @@ window.onload = function ()
     }); //closing JSON object
 
     //defining buttons
-    let stateGoBtn = document.querySelector("#stateGoBtn")
-    let parkTypeGoBtn = document.querySelector("#parkTypeGoBtn")
-    let viewAllBtn = document.querySelector("#viewAllBtn")
+    let stateGoBtn = document.querySelector("#stateGoBtn");
+    let parkTypeGoBtn = document.querySelector("#parkTypeGoBtn");
+    let viewAllBtn = document.querySelector("#viewAllBtn");
+    let parksReset = document.querySelector("#parksReset");
+
+    let parkAlert = document.querySelector(".parkAlert");
+    let stateAlert = document.querySelector(".stateAlert");
 
     //click events
     stateGoBtn.onclick = function ()
     {
-        createSearchByStateTable(objects, stateSelectInput.value);
+        if (stateSelectInput.value == "choose a state")
+        {
+            stateAlert.style.display = "block";
+        }
+        else
+        {
+            stateAlert.style.display = "none";
+            createSearchByStateTable(objects, stateSelectInput.value);
+        }
     }
 
     parkTypeGoBtn.onclick = function()
     {
-        createSearchByParkTypeTable(objects, parkTypeSelectInput.value);
+        if (parkTypeSelectInput.value == "choose")
+        {
+            parkAlert.style.display = "block";
+        }
+        else
+        {
+            parkAlert.style.display = "none";
+            createSearchByParkTypeTable(objects, parkTypeSelectInput.value);
+        }
+        
     }
 
     viewAllBtn.onclick = function()
     {
         createShowAllParks(objects);
+    }
+
+    parksReset.onclick = function()
+    {
+        nationalParksTable.innerHTML = "";
     }
 }

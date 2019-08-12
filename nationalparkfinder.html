@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!--My CSS-->
+    <!--My CSS and favicon-->
     <link rel="stylesheet" href="css/site.css">
     <link rel="stylesheet" href="css/nationalparksfinder.css">
+    <link rel="icon" href="images/mountain-favicon.png">
 
     <title>Enjoy the Outdoors</title>
 </head>
@@ -48,10 +49,12 @@
             <div class="sortByState">
                 <label for="stateSelect">Search By State</label>
                 <select class="form-control col-md-6" id="stateSelect">
-                    <option value="choose a state">Choose a State</option>
+                    <option value="choose a state">Choose a state</option>
                 </select>
                 <button type="submit" class="btn btn-primary" id="stateGoBtn">Let's Go!</button>
-                <button type="submit" class="btn btn-dark" id="viewAllBtn">Show Me All the Parks!</button>
+            </div>
+            <div class="stateAlert">
+                <p>Please choose a state</p>
             </div>
             <p class="orPara">OR</p>
             <div class="sortByParkType">
@@ -61,6 +64,13 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-primary" id="parkTypeGoBtn">Let's Go!</button>
+            <div class="parkAlert">
+                <p>Please choose a park type</p>
+            </div>
+            <div class="allAndReset">
+                <button type="submit" class="btn btn-dark" id="viewAllBtn">Show Me All the Parks!</button>
+                <button type="button" class="btn btn-danger" id="parksReset">Reset</button>
+            </div>
             <hr>
             <table id="nationalParksTable" class="table table-striped table-bordered">
                 <thead class="thead-dark">

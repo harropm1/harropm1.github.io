@@ -18,7 +18,7 @@ function insertTableData(list, tBody)
     let cell3Elevation = row2.insertCell(0);
     let cell4Elevation = row2.insertCell(1);
     cell3Elevation.innerHTML = "Elevation";
-    cell4Elevation.innerHTML = list.elevation;
+    cell4Elevation.innerHTML = list.elevation.toLocaleString() + " ft.";
 
     let row3 = tBody.insertRow(2)
     let cell5Effort = row3.insertCell(0);
@@ -95,9 +95,15 @@ window.onload = function ()
 
     //defining variables
     let mountainBtn = document.querySelector("#mountainBtn")
+    let mountainReset = document.querySelector("#mountainReset");
+    let mountainTable = document.querySelector("#mountainTable")
 
     mountainBtn.onclick = function ()
     {
         createMountainTable(objects, mountainSelectInput);
+    }
+    mountainReset.onclick = function()
+    {
+        mountainTable.innerHTML = "";
     }
 }

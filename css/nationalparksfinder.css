@@ -1,3 +1,9 @@
 .orPara {
     font-weight: bold;
 }
+.stateAlert{
+    display: none;
+}
+.parkAlert{
+    display: none;
+}

@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!--My CSS and favicon-->
     <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/mountains.css">
+    <link rel="icon" href="images/mountain-favicon.png">
 
     <title>Enjoy the Outdoors</title>
 </head>
@@ -42,40 +45,40 @@
 
     <!--dropdowns/search buttons/table-->
     <main>
-        <main>
-            <div class="container">
-                <div class="sortByCategory">
-                    <label for="mountainSelect">Find a mountain</label>
-                    <select class="form-control col-md-6" id="mountainSelect">
-                        <option value="choose">Choose one</option>
-                    </select>
-                    <button type="submit" class="btn btn-primary" id="mountainBtn">Let's Go!</button>
-                </div>
-                <table id="mountainTable" class="table table-bordered table-striped">
-                    <tbody id="tableBody">
-                    </tbody>
-                </table>
+        <div class="container">
+            <div class="sortByCategory">
+                <label for="mountainSelect">Find a mountain</label>
+                <select class="form-control col-md-6" id="mountainSelect">
+                    <option value="choose">Choose one</option>
+                </select>
+                <button type="submit" class="btn btn-primary" id="mountainBtn">Let's Go!</button>
+                <button type="button" class="btn btn-danger" id="mountainReset">Reset</button>
             </div>
-        </main>
+            <table id="mountainTable" class="table table-bordered table-striped">
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+    </main>
 
-        <!--footer-->
-        <hr>
-        <footer class="text-right">
-            <p>All data provided by Dana. Also, Michelle was sick, so go easy on her.</p>
-        </footer>
+    <!--footer-->
+    <hr>
+    <footer class="text-right">
+        <p>All data provided by Dana. Also, Michelle was sick, so go easy on her.</p>
+    </footer>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
-        <!--my javascript-->
-        <script src="scripts/mountains.js"></script>
+    <!--my javascript-->
+    <script src="scripts/mountains.js"></script>
 
 </body>
 
